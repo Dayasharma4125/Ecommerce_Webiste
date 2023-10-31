@@ -1,0 +1,6 @@
+div.word:hover .char{
+    transform: rotateY(90deg) !important;
+    transition: all 1s ease ;
+    transform-origin: left;
+    
+}

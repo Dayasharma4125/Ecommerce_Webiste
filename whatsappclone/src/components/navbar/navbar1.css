@@ -1,0 +1,199 @@
+*,
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+  display: none;
+}
+header{
+  height: calc(100vh /13 + 20px);
+  width: 90vw;
+}
+.nav {
+  backdrop-filter: blur(5px);
+  height: calc(100vh / 13);
+  background: hsla(0, 0%, 2%, 0.702);
+}
+.cr #a {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 100000;
+  mix-blend-mode: difference;
+  opacity: 1;
+  border: rgb(228, 61, 61) solid 4px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+.cr #a div {
+  height: 10px;
+  width: 10px;
+  background-color: rgb(0, 0, 0);
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  opacity: 1;
+}
+#navtoggle {
+  background: blue;
+  height: 45px;
+  width: 45px;
+  border: none;
+  border-radius: 50%;
+  z-index: 50;
+}
+.navhamburg {
+  margin: auto;
+  position: relative;
+  margin-top: -12%;
+  background: black;
+  height: 0.3vh;
+  width: 30px;
+  border-radius: 5px;
+  background: white;
+}
+.nav.active  .navhamburg {
+  transition: 0.3s;
+  transform: rotate(-40deg) translate(-3.5px, 5px);
+  z-index: 50;
+}
+.nav.active  .navhamburg:after {
+  transition: all 0.3s;
+  top: 0;
+  transform: rotate(80deg);
+}
+#navitem + div{
+  @media (max-width:700px) {
+      width: 50%;
+  }
+}
+#serchbar.active{
+    transform: scaleX(1);
+    transition: all 0.5s linear;
+}
+#serchbar{
+  width: 80%;
+  height: 50%;
+  background:rgba(5, 5, 5, 0.7) ;
+  backdrop-filter: blur(15px);
+  position: fixed;
+  top: 110%;
+  border-radius: 15px;
+  left: 10%;
+  /* left: 50%; */
+  transform: scaleX(0 ) translateX(-50%);
+  transition: all 0.5s linear;
+  padding: 20px;
+}
+
+
+.navhamburg:after {
+  background: white;
+  content: "";
+  border-radius: 5px;
+  height: 0.3vh;
+  height: 100%;
+  width: 30px;
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+/* .navhamburg:after {
+} */
+.navcircle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.navcircle > img {
+  height: 100%;
+  width: 100%;
+}
+.navitem {
+  background: #000000;
+  width: 90%;
+  height: 100vh;
+  position: absolute;
+  right: -90%;
+  transition: all 0.2s ease;
+  transition-delay: 0.1s;
+  top: 0;
+  visibility: hidden;
+  transform: scaleY(0);
+  z-index: 10;
+  opacity: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.navitem.active {
+  right: -5%;
+  top: -8px;
+  transform: scaleY(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.line {
+  overflow: hidden;
+}
+.navhoverunderline {
+  background: white;
+  height: 15px;
+  width: 20%;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+/* .navitem.active .navhoverunderline {
+  transition: all 0.2s linear;
+  transform: scaleX(1);
+  transition-delay: 0.5s;
+} */
+.navitemone {
+  width: 100%;
+  height: 2%;
+  margin-left: 20%;
+  margin-top: 4%;
+  position: relative;
+  overflow: hidden;
+  /* transform: scaleY(0); */
+  transform-origin: top;
+  transition: all 0.4s ease;
+  transition-delay: 0.4s;
+}
+.navitemone:hover{
+  scale: 1.01;
+  transition: all 0.2s ease ;
+}
+.navitem.active .navitemone {
+  transform-origin: top;
+  /* transform: scaleY(1); */
+  height: 7%;
+}
+.navitemone h2 {
+  font-size: 35px;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+}
+
+@media (max-width: 600px) {
+  html {
+    padding: 0;
+    margin: 0;
+  }
+  .navhoverunderline{
+    width: 50%;
+    height: 5px;
+  }
+}
